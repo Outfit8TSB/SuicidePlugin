@@ -1,0 +1,11 @@
+name: SuicidePlugin
+version: '${version}'
+main: club.aurorapvp.SuicidePlugin
+api-version: 1.19
+authors: [ Villagers654 ]
+description: A plugin which enables suicide
+commands:
+  kill:
+    description: Kills the player
+  suicide:
+    description: Kills the player
