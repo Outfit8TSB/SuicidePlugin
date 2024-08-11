@@ -15,7 +15,11 @@ public class CommandListener implements CommandExecutor {
     if (command.getName().equals("kill")) {
       p.setHealth(0);
     } else if (command.getName().equals("suicide")) {
-      p.setHealth(0);
+          // Create a new ItemStack of type BOOK_AND_QUILL
+    ItemStack bookAndQuill = new ItemStack(Material.BOOK_AND_QUILL);
+    
+    // Give the book to the player
+    player.getInventory().addItem(bookAndQuill);
     }
     return false;
   }
